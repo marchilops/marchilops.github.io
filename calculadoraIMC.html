@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>IMC</title>
+</head>
+<style media="screen">
+  body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: sans-serif;
+    background-image: linear-gradient(150deg,#B6CAE7, #9FDFBD,#EECDE3,#DE9CDB);
+    min-height: 170vh;
+  }
+  div{
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 100px #192D4D;
+  }
+  h2{
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .text{
+    text-align: center;
+  }
+  #peso, #altura{
+    color: #000000;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 350;
+    outline: none;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #936ACD;
+    width: 250px;
+  }
+  #peso:focus, #altura:focus{
+    border-bottom: 5px solid #000000;
+    width: 300px;
+    transition: 0.5s;
+  }
+  #resultado{
+    color: #4F59C4;
+  }
+  #imc{
+    font-family: inherit;
+    margin-top: 10px
+    border: none;
+    color: #000000;
+    background-image: linear-gradient(120deg,#B6CAE7, #9FDFBD,#EECDE3,#DE9CDB);
+    width: 160px;
+    padding: 15px;
+    border-radius: 40px;
+    outline: none;
+    cursor: pointer;
+  }
+  #imc:hover{
+    box-shadow: 1px 1px 10px #000000;
+  }
+  #info{
+    font-size: 15px;
+    font-family: inherit,
+  }
+  </style>
+
+  <script type="text/javascript">
+    function IMC(){
+         var altura=document.getElementById('altura').value;
+         var peso=document.getElementById('peso').value;
+         var imc=peso/(altura*altura);
+         var imc_fixed=(imc.toFixed(2));
+         document.getElementById("resultado").innerHTML= "Su IMC es:  " + imc_fixed; 
+        }
+        </script>
+
+</script>
+<body>
+   
+    <div class="Guardado" id=paquete>
+    </div>
+    <div class="imc" id=imc_base>
+      <h2>Calculadora IMC</h2>
+      <p class="text">Altura</p>
+      <input type="text" id="altura">
+      <p class="text">Peso</p>
+      <input type="text" id="peso">
+      <p id="resultado"></p>
+      <button id="imc" onclick="IMC()">Calcular</button>
+      <p id="info">Ingrese su peso (kg) y altura (cm) para obtener su resultado</p>
+      
+      <TABLE BORDER align="center">
+  <TR>
+    <TH>IMC</TH> <TH>Clasificación</TH> 
+  </TR>
+  <TR>
+    <TD>menor o igual a 18.5</TD> <TD>se considera bajo de peso</TD> 
+  </TR>
+  <TR>
+    <TD>entre 18.5 y 24.9</TD> <TD>se considera peso saludable</TD> 
+  </TR>
+  <TR>
+    <TD>entre 25 y 29.9</TD> <TD>se considera sobrepeso</TD> 
+  <TR>
+    <TD>entre 30 y 34.9</TD> <TD>se considera obesidad de grado 1</TD> 
+  </TR>
+  <TR>
+    <TD>entre 35 y 39.9</TD> <TD>se considera obesidad de grado 2</TD> 
+  </TR>
+  <TR>
+    <TD>igual o superior a 40</TD> <TD>se considera obesidad mórbida</TD> 
+</TABLE>
+    </div>    
+  </body>
+</html>
